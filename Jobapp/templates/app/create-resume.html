@@ -1,0 +1,334 @@
+{% extends "app/base2.html" %}
+{% block content %} 
+{% load static %}
+    <!-- Start home -->
+    <section class="bg-half page-next-level" style="background: url('/static/images/bg-page-header (1).jpg') center center;"> 
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">Create Resume</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="{% url 'index' %}" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="#" class="text-uppercase font-weight-bold">Pages</a></li> 
+                            <li><a href="#" class="text-uppercase font-weight-bold">Candidates</a></li> 
+                            <li>
+                                <span class="text-uppercase text-white font-weight-bold">Creat Resume</span> 
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home -->
+    <!-- CREATE RESUME START -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="text-dark">General Information :</h5>
+                </div>
+ 
+                <div class="col-12 mt-3">
+                    <div class="custom-form p-4 border rounded">
+                        <img src="{% static '/images/employers/img-1 (1).jpg' %}" class="img-fluid avatar avatar-medium d-block mx-auto rounded-pill" alt="">
+                        <form method="POST" action="{% url 'resume'%}">
+                            {% csrf_token %}
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">First Name<span class="text-danger">*</span> :</label>
+                                        <input id="first-name" type="text" name="firstname" class="form-control resume" placeholder="First Name :" required="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Middle Name<span class="text-danger">*</span> :</label>
+                                        <input id="middle-name" name="middlename" type="text" class="form-control resume" placeholder="Middle Name :" required="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Surname<span class="text-danger">*</span> :</label>
+                                        <input id="surname-name"  name="surname" type="text" class="form-control resume" placeholder="Surname :" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Birth Date<span class="text-danger">*</span> :</label>
+                                        <div class="rFrNMe yqQS1 hatWr zKHdkd CDELXb" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="jPalo">
+                                            <div class="aCsJod oJeWuf">
+                                            <div class="aXBtI Wic03c">
+                                                <div class="Xb9hP"><input type="date" name="dob" class="whsOnd zHQkBf" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-labelledby="i39" max="2072-01-01" data-initial-value="2022-05-03" badinput="false" dir="ltr" name="dob" value="{{can.dob}}" required=""></div>
+                                                <div class="i9lrp mIZh1c"></div>
+                                                <div jsname="XmnwAc" class="OabDMe cXrdqd Y2Zypf" style="transform-origin: 118.475px center;"></div>
+                                            </div>
+                                            </div><div class="LXRPh">
+                                            <div jsname="ty6ygf" class="ovnfwe Is7Fhb"></div>
+                                            </div>
+                                        </div>                                                                                                                        
+                                    </div>
+                                </div>
+                             
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label ">
+                                        <label class="text-muted">Sex<span class="text-danger">*</span> :</label>
+                                        <div class="form-button">
+                                            <select class="form-control rounded" name="gender" required="">
+                                                <option data-display="Gender">Sex</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group app-label ">
+                                        <label class="text-muted">Marital Status<span class="text-danger">*</span> :</label>
+                                        <div class="form-button">
+                                            <select class="form-control rounded" name="Status" required="">
+                                                <option data-display="Status">Status</option>
+                                                <option value="1">Unmarried</option>
+                                                <option value="2">Married</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                </div>
+                                <div class="col-12">
+                                    <h5 class="text-dark">Contact Information :</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label ">
+                                            <label class="text-muted">City<span class="text-danger">*</span> :</label>
+                                            <div class="form-button">
+                                                <select class="form-control rounded" name="city" required="">
+                                                    <option data-display="City">City</option>
+                                                    <option>Abilene</option>
+                                                    <option>Babbitt</option>
+                                                    <option>Cape Coral</option>
+                                                    <option>Dallas</option>
+                                                    <option>Eloy</option>
+                                                </select>
+                                            </div>
+                                       </div>
+                                    </div>
+    
+                                    
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label ">
+                                            <label class="text-muted">State<span class="text-danger">*</span> :</label>
+                                            <div class="form-button">
+                                                <select class="form-control rounded" name="State" required="">
+                                                    <option data-display="State">State</option>
+                                                        <option>Alabama</option>
+                                                        <option>Hawaii</option>
+                                                        <option>Maine</option>
+                                                        <option>Oregon</option>
+                                                </select>
+                                            </div>
+                                       </div>
+                                    </div>
+    
+                                    
+    
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label ">
+                                            <label class="text-muted">Country<span class="text-danger">*</span> :</label>
+                                            <div class="form-button">
+                                                <select class="form-control rounded" name="country" required="">
+                                                    <option data-display="Country">Country</option>
+                                                    <option>Alabama</option>
+                                                    <option>Delaware</option>
+                                                    <option>Iowa</option>
+                                                    <option>Missouri</option>
+                                                    <option>New York</option>
+                                                    <option>Utah</option>
+                                                </select>
+                                            </div>
+                                       </div>
+                                    </div>
+    
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Phone</label>
+                                            <input id="phone" name="contact" type="number" class="form-control resume" placeholder="Phone No. :" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">E-mail</label>
+                                            <input id="e-mail" type="email" name="email" class="form-control resume" placeholder="Email ID :" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-4">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Website</label>
+                                            <input id="website" type="url" name="website" class="form-control resume" placeholder="www.example.com" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label>Address :</label>
+                                            <textarea id="address" rows="4"  name="address" class="form-control resume" placeholder="" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-12">
+                                    <h5 class="text-dark mt-5">Education Details :</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Graduation</label>
+                                            <input id="graduation" type="text" name="graduation" class="form-control resume" placeholder="" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">University/College</label>
+                                            <input id="university/college" type="text" name="university/college" class="form-control resume" placeholder="" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Degree/Certification</label>
+                                            <input id="degree/certification" type="text"name="degree/certification" class="form-control resume" placeholder="" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label ">
+                                                    <label class="text-muted">Level<span class="text-danger">*</span> :</label>
+                                                    <div class="form-button">
+                                                        <select class="form-control rounded" name="level" required="" >
+                                                            <option data-display="Select">Select</option>
+                                                            <option>Level-1</option>
+                                                            <option>Level-2</option>
+                                                            <option>Level-3</option>
+                                                            <option>Level-4</option>
+                                                        </select>
+                                                    </div>
+                                               </div>
+                                            </div>
+    
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label">
+                                                    <label class="text-muted">Course Title</label>
+                                                    <input id="course-title" type="text" name="course" class="form-control resume" placeholder="" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label>Additional Information :</label>
+                                            <textarea id="addition-information" name="addition_information" rows="4" class="form-control resume" placeholder="" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="text-dark">Work Experience :</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Company Name</label>
+                                            <input id="company-name" type="text" name="companyname" class="form-control resume" placeholder="" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Job Position</label>
+                                            <input id="job-position" type="text" name="jobPosition" class="form-control resume" placeholder="" required="">
+                                        </div>
+                                    </div>
+    
+                                    
+    
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label ">
+                                            <label class="text-muted">Location<span class="text-danger">*</span> :</label>
+                                            <div class="form-button">
+                                                <select class="form-control rounded" name="location" required="">
+                                                    <option data-display="Search">Search</option>
+                                                    <option>New York</option>
+                                                    <option>Los Angeles</option>
+                                                    <option>Chicago</option>
+                                                    <option>Houston</option>
+                                                    <option>Indiana</option>
+                                                </select>
+                                            </div>
+                                       </div>
+                                    </div>
+    
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label">
+                                                    <label class="text-muted">Date From</label>
+                                                    <input id="date-from" type="text" name="date_from" class="form-control resume" placeholder="01-Jan-2018" required="">
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label">
+                                                    <label class="text-muted">Date To</label>
+                                                    <input id="date-to" type="text"  name="date_to" class="form-control resume" placeholder="31-March-2019" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label>Additional Information :</label>
+                                            <textarea id="addition-information-1" rows="4" name="Additional Information" class="form-control resume" placeholder="" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="text-dark">Skills :</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Skills</label>
+                                            <input id="skills" type="text"  name="skills" class="form-control resume" placeholder="HTML, CSS, PHP, javascript, ..." required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Skill proficiency</label>
+                                            <input id="skill_proficiency" name="skills_proficiency" type="text" class="form-control resume" placeholder="75%" required="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Submit Resume">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}  
